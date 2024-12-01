@@ -17,19 +17,15 @@ const { tags } = Astro.props;
 </div>
 
 <style>
-  a {
-    color: #00539f;
-  }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
   }
 
   .tag {
-    background-color: #f8fcfd;
+    background-color: var(--b1);
     border-radius: 0.5em;
-    border: dotted 1px #a1a1a1;
+    border: dotted 1px var(--b3);
     font-size: 1.15em;
     margin: 0.25em;
     padding: 0.5em 1em;

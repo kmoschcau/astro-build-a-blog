@@ -1,5 +1,15 @@
+:root {
+  --bg: oklch(96.83% 0.0069 247.9);
+  --b1: oklch(from var(--bg) calc(l - 10) c h);
+  --b2: oklch(from var(--bg) calc(l - 20) c h);
+  --b3: oklch(from var(--bg) calc(l - 30) c h);
+  --p: oklch(37.96% 0.1783 293.74);
+  --pc: oklch(100% 0 0);
+  --s: oklch(77.81% 0.1336 38.36);
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--bg);
   font-family: sans-serif;
 }
 
@@ -32,11 +42,11 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: var(--s);
 }
 
 .nav-links {
-  background-color: #ff9776;
+  background-color: var(--s);
   display: none;
   left: 48px;
   margin: 0;
@@ -56,7 +66,7 @@ h1 {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: var(--s);
 }
 
 .expanded {
