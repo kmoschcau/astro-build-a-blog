@@ -27,10 +27,6 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
-
-const fontWeight = "bold";
-const skillColor = "navy";
-const textCase = "uppercase";
 ---
 
 <BaseLayout {pageTitle}>
@@ -73,11 +69,3 @@ const textCase = "uppercase";
     )
   }
 </BaseLayout>
-
-<style define:vars={{ fontWeight, skillColor, textCase }}>
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-</style>
