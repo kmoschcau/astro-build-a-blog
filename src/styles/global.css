@@ -1,16 +1,47 @@
 :root {
-  --bg: oklch(96.83% 0.0069 247.9);
-  --b1: oklch(from var(--bg) calc(l - 10) c h);
-  --b2: oklch(from var(--bg) calc(l - 20) c h);
-  --b3: oklch(from var(--bg) calc(l - 30) c h);
-  --p: oklch(37.96% 0.1783 293.74);
-  --pc: oklch(100% 0 0);
-  --s: oklch(77.81% 0.1336 38.36);
+  --bg-base: oklch(96.83% 0.0069 247.9);
+  --fg-base: black;
+  --a-base: oklch(35% 0.3 265);
+  --av-base: oklch(35% 0.3 300);
+  --b1-base: oklch(from var(--bg-base) calc(l - 0.1) c h);
+  --b2-base: oklch(from var(--bg-base) calc(l - 0.2) c h);
+  --b3-base: oklch(from var(--bg-base) calc(l - 0.3) c h);
+  --p-base: oklch(37.96% 0.1783 293.74);
+  --pc-base: oklch(100% 0 0);
+  --s-base: oklch(77.81% 0.1336 38.36);
+  --ac-base: oklch();
+
+  --dark-adjust: 0.2;
+
+  --bg: var(--bg-base);
+  --fg: var(--fg-base);
+  --a: var(--a-base);
+  --av: var(--av-base);
+  --b1: var(--b1-base);
+  --b2: var(--b2-base);
+  --b3: var(--b3-base);
+  --p: var(--p-base);
+  --pc: var(--pc-base);
+  --s: var(--s-base);
 }
 
 html {
   background-color: var(--bg);
+  color: var(--fg);
   font-family: sans-serif;
+
+  &.dark {
+    --bg: oklch(from var(--bg-base) calc(1 - l + var(--dark-adjust)) c h);
+    --fg: oklch(from var(--fg-base) calc(1 - l + var(--dark-adjust)) c h);
+    --a: oklch(from var(--a-base) calc(1 - l + var(--dark-adjust)) c h);
+    --av: oklch(from var(--av-base) calc(1 - l + var(--dark-adjust)) c h);
+    --b1: oklch(from var(--b1-base) calc(1 - l + var(--dark-adjust)) c h);
+    --b2: oklch(from var(--b2-base) calc(1 - l + var(--dark-adjust)) c h);
+    --b3: oklch(from var(--b3-base) calc(1 - l + var(--dark-adjust)) c h);
+    --p: oklch(from var(--p-base) calc(1 - l + var(--dark-adjust)) c h);
+    --pc: oklch(from var(--pc-base) calc(1 - l + var(--dark-adjust)) c h);
+    --s: oklch(from var(--s-base) calc(1 - l + var(--dark-adjust)) c h);
+  }
 }
 
 body {
@@ -28,4 +59,12 @@ body {
 h1 {
   font-size: 2.5rem;
   margin: 1rem 0;
+}
+
+:link {
+  color: var(--a);
+}
+
+:visited {
+  color: var(--av);
 }
